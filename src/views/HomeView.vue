@@ -16,9 +16,13 @@ export default {
 
 <template>
   <main>
-    <h1>Discover Movies</h1>
-    <button>Popularity</button>
-    <button>Release Date</button>
+    <div class="flex justify-between mb-8">
+      <p class="text-2xl text-[#E5E5E5]">Discover Movies</p>
+      <div>
+        <button class="bg-[#FF0000] text-[#E5E5E5] font-semibold py-1 px-4 rounded-full mr-5">Popularity</button>
+        <button class="bg-[#21252A] text-[#E5E5E5] font-semibold py-1 px-4 rounded-full">Release Date</button>
+      </div>
+    </div>
     <div class="card-wrapper">
       <MovieCard v-for="movie in movies" :rating="movie.rating" :poster="`../src/assets/images/${movie.poster}`"
         :title="movie.title" :year="movie.year" />
@@ -30,5 +34,6 @@ export default {
 .card-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
 }
 </style>

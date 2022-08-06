@@ -43,5 +43,6 @@ export default {
 .card-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
 }
 </style>
