@@ -1,0 +1,32 @@
+[
+    {
+        "title": "The New Muttans",
+        "poster": "new-mutants.jpg",
+        "rating": "7.0",
+        "year": "2020"
+    },
+    {
+        "title": "Soul",
+        "poster": "soul.jpg",
+        "rating": "7.0",
+        "year": "2020"
+    },
+    {
+        "title": "Tenet",
+        "poster": "tenet.jpg",
+        "rating": "7.0",
+        "year": "2020"
+    },
+    {
+        "title": "The Old Guard",
+        "poster": "old-guard.jpg",
+        "rating": "7.0",
+        "year": "2021"
+    },
+    {
+        "title": "Project Power",
+        "poster": "project-power.jpg",
+        "rating": "7.0",
+        "year": "2020"
+    }
+]
