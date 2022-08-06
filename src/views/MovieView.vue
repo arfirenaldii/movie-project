@@ -26,7 +26,7 @@ export default {
     <p>2021</p>
     <h1>Wonder Woman 1984</h1>
     <p>Fantasy, Action, Adventure</p>
-    <div class="flex">
+    <div class="info-wrapper">
       <h1>7.0</h1>
       <div>
         <p>USER SCORE</p>
@@ -93,15 +93,16 @@ export default {
     <div>
       <p>RECOMMENDATION MOVIES</p>
       <div class="card-wrapper">
-        <MovieCard v-for="recommendation in recommendation" :rating="recommendation.rating" :poster="`../src/assets/images/${recommendation.poster}`"
-          :title="recommendation.title" :year="recommendation.year" />
+        <MovieCard v-for="recommendation in recommendation" :rating="recommendation.rating"
+          :poster="`../src/assets/images/${recommendation.poster}`" :title="recommendation.title"
+          :year="recommendation.year" />
       </div>
     </div>
   </main>
 </template>
 
 <style scoped>
-.flex {
+.info-wrapper {
   display: flex;
   gap: 30px;
 }
@@ -122,5 +123,6 @@ export default {
 .card-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
 }
 </style>
