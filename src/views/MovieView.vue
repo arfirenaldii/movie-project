@@ -14,7 +14,7 @@ export default {
     Star,
   },
   mounted() {
-    console.log(this.$route.params.id)
+    window.scrollTo(0, 0)
   },
 }
 </script>

@@ -14,59 +14,63 @@
         "year": "2021"
     },
     {
-        "title": "Wonder Woman 1984",
-        "overview": "Wonder Woman comes into conflict with the Soviet Union during the Cold War in the 1980s and finds a formidable foe by the name of the Cheetah.",
-        "poster": "wonder-woman.jpg",
-        "rating": "7.0",
-        "year": "2020"
-    },
-    {
-        "title": "Bellow Zero",
-        "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "poster": "below-zero.jpg",
-        "rating": "6.4",
+        "title": "The Little Things",
+        "poster": "little-things.jpg",
+        "rating": "6.3",
         "year": "2021"
     },
     {
-        "title": "Wonder Woman 1984",
-        "overview": "Wonder Woman comes into conflict with the Soviet Union during the Cold War in the 1980s and finds a formidable foe by the name of the Cheetah.",
-        "poster": "wonder-woman.jpg",
-        "rating": "7.0",
-        "year": "2020"
-    },
-    {
-        "title": "Wonder Woman 1984",
-        "overview": "Wonder Woman comes into conflict with the Soviet Union during the Cold War in the 1980s and finds a formidable foe by the name of the Cheetah.",
-        "poster": "wonder-woman.jpg",
-        "rating": "7.0",
-        "year": "2020"
-    },
-    {
-        "title": "Bellow Zero",
-        "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "poster": "below-zero.jpg",
-        "rating": "6.4",
+        "title": "Outside the Wire",
+        "poster": "outside-wire.jpg",
+        "rating": "6.5",
         "year": "2021"
     },
     {
-        "title": "Wonder Woman 1984",
-        "overview": "Wonder Woman comes into conflict with the Soviet Union during the Cold War in the 1980s and finds a formidable foe by the name of the Cheetah.",
-        "poster": "wonder-woman.jpg",
-        "rating": "7.0",
+        "title": "Black Water: Abyss",
+        "poster": "black-water.jpg",
+        "rating": "5.1",
         "year": "2020"
     },
     {
-        "title": "Bellow Zero",
-        "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "poster": "below-zero.jpg",
-        "rating": "6.4",
+        "title": "Breach",
+        "poster": "breach.jpg",
+        "rating": "4.6",
         "year": "2021"
     },
     {
-        "title": "Wonder Woman 1984",
-        "overview": "Wonder Woman comes into conflict with the Soviet Union during the Cold War in the 1980s and finds a formidable foe by the name of the Cheetah.",
-        "poster": "wonder-woman.jpg",
-        "rating": "7.0",
+        "title": "Soul",
+        "poster": "soul.jpg",
+        "rating": "8.3",
+        "year": "2020"
+    },
+    {
+        "title": "Fast & Furious Present..",
+        "poster": "hobbs-shaw.jpg",
+        "rating": "6.9",
+        "year": "2019"
+    },
+    {
+        "title": "The Croods: A New Age",
+        "poster": "croods.jpg",
+        "rating": "7.6",
+        "year": "2020"
+    },
+    {
+        "title": "Vanguard",
+        "poster": "vanguard.jpg",
+        "rating": "6.3",
+        "year": "2020"
+    },
+    {
+        "title": "Tenet",
+        "poster": "tenet.jpg",
+        "rating": "7.3",
+        "year": "2020"
+    },
+    {
+        "title": "100% Wolf",
+        "poster": "wolf.jpg",
+        "rating": "5.9",
         "year": "2020"
     }
 ]

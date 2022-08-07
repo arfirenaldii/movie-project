@@ -21,7 +21,7 @@ export default {
         <div class="flex justify-between items-center pt-[90px]">
           <div>
             <div class="line"></div>
-            <p class="text-2xl text-[#E5E5E5]">Discover Movies</p>
+            <p class="text-2xl text-[#E5E5E5] mt-2">Discover Movies</p>
           </div>
           <div>
             <button class="bg-[#FF0000] text-[#E5E5E5] font-semibold py-1 px-4 rounded-full mr-5">Popularity</button>
@@ -34,8 +34,8 @@ export default {
     <section class="bg-[#1E232A] pt-1">
       <div class="container mx-auto pb-[100px]">
         <div class="card-wrapper">
-          <MovieCard v-for="movie in movies" :rating="movie.rating" :poster="`../src/assets/images/${movie.poster}`"
-            :title="movie.title" :year="movie.year" />
+          <MovieCard v-for="movie in movies.slice(0, 10)" :rating="movie.rating"
+            :poster="`../src/assets/images/${movie.poster}`" :title="movie.title" :year="movie.year" />
         </div>
       </div>
     </section>
