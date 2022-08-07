@@ -5,7 +5,30 @@ import MOVIES from '../data/movies.json'
 export default {
   data() {
     return {
-      movies: MOVIES
+      movies: MOVIES,
+      selected: '',
+      options: [
+        'Popularity Ascending',
+        'Popularity Descending',
+        'Release Date Ascending',
+        'Release Date Descending',
+        'Rating Ascending',
+        'Rating Descending'
+      ],
+      genres: [
+        'Action',
+        'Adventure',
+        'Animation',
+        'Comedy',
+        'Crime',
+        'Documentary',
+        'Drama',
+        'Family',
+        'Fantasy',
+        'History',
+        'Horror'
+      ],
+      checkedGenres: []
     }
   },
   components: {
@@ -26,19 +49,29 @@ export default {
     <section class="bg-[#1E232A] pt-1">
       <div class="container mx-auto pb-[100px]">
         <div class="-mt-[170px] flex gap-7">
-          <aside class="bg-gradient-to-b from-[#0E1723] to-[#1E232A00] rounded-lg text-white p-5 min-w-[240px] h-fit">
-            <p>Sort Result By</p>
-            <ul>
-              <li>Todo 1</li>
-              <li>Todo 2</li>
-              <li>Todo 3</li>
-            </ul>
-            <p>Genres</p>
-            <ul>
-              <li>Action</li>
-              <li>Adventure</li>
-              <li>Animation</li>
-            </ul>
+          <aside class="bg-gradient-to-b from-[#0E1723] to-[#1E232A00] rounded-lg text-white min-w-[240px] h-fit">
+            <div class="divide-y divide-solid divide-[#FFFFFF]/10">
+              <div class="p-4">
+                <p class="text-base font-semibold">Sort Result By</p>
+              </div>
+              <div class="px-4 pt-5 pb-6">
+                <select class="bg-[#E0E0E0]/10 w-full" v-model="selected">
+                  <option disabled value="">Popularity</option>
+                  <option class="bg-[#111419]" v-for="(sort, index) in options" :key="`${sort}-${index}`" :value="sort">
+                    {{ sort }}
+                  </option>
+                </select>
+              </div>
+              <div class="px-4 py-3">
+                <p class="text-base font-semibold">Genres</p>
+              </div>
+              <div class="px-4 py-3">
+                <div class="flex justify-between py-1" v-for="(genre, index) in genres" :key="`${genre}-${index}`">
+                  <label class="text-sm font-normal" :for="genre">{{ genre }}</label>
+                  <input type="checkbox" :value="genre" v-model="checkedGenres">
+                </div>
+              </div>
+            </div>
           </aside>
           <div class="w-full">
             <div class="card-wrapper">
@@ -46,7 +79,7 @@ export default {
                 :title="movie.title" :year="movie.year" />
             </div>
             <div class="text-center">
-              <button class="bg-[#FF0000] text-[#E5E5E5] font-semibold py-1 px-4 rounded-full">Load More</button>
+              <button class="bg-[#FF0000] text-[#E5E5E5] font-semibold py-1 px-9 rounded-full">Load More</button>
             </div>
           </div>
         </div>

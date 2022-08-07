@@ -21,7 +21,7 @@ export default {
         <div class="flex justify-between items-center pt-[90px]">
           <div>
             <div class="line"></div>
-            <p class="text-2xl text-[#E5E5E5] mt-2">Discover Movies</p>
+            <p class="text-2xl text-[#E5E5E5] font-semibold mt-2">Discover Movies</p>
           </div>
           <div>
             <button class="bg-[#FF0000] text-[#E5E5E5] font-semibold py-1 px-4 rounded-full mr-5">Popularity</button>
