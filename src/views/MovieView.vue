@@ -24,14 +24,13 @@ export default {
     <section class="relative bg-black">
       <div class="banner"></div>
       <div class="absolute bottom-0 w-full">
-        <div class="container mx-auto pb-7">
-          <img src="../assets/images/wonder-woman.jpg" alt="wonder woman" />
+        <div class="container mx-auto pb-7 pl-[250px]">
           <p class="text-lg text-white font-medium">2020</p>
           <p class="text-4xl text-white font-semibold">Wonder Woman 1984</p>
           <p class="text-sm text-white font-medium">Fantasy, Action, Adventure</p>
         </div>
         <div class="bg-black/50 py-4">
-          <div class="container mx-auto flex">
+          <div class="container mx-auto flex pl-[250px]">
             <div class="flex items-center pr-8 border-r-[1px] border-white/20">
               <img class="mr-4" src="../assets/images/star-icon.svg" alt="star icon" />
               <p class="text-4xl text-white font-semibold mr-3">7.0</p>
@@ -61,15 +60,18 @@ export default {
       </div>
     </section>
 
-    <div class="container mx-auto pt-8">
-      <p class="text-base text-[#FF0000] font-semibold">OVERVIEW</p>
-      <p class="text-sm text-black font-normal mt-2">Wonder Woman comes into conflict with the Soviet Union during the
-        Cold
-        War in the 1980s and finds a formidable
-        foe by the name of the Cheetah.</p>
-    </div>
+    <section class="container mx-auto pt-8 flex">
+      <img class="inline mt-[-220px] z-10" src="../assets/images/wonder-woman.jpg" alt="wonder woman" />
+      <div class="ml-9">
+        <p class="text-base text-[#FF0000] font-semibold">OVERVIEW</p>
+        <p class="text-sm text-black font-normal mt-2">Wonder Woman comes into conflict with the Soviet Union during the
+          Cold
+          War in the 1980s and finds a formidable
+          foe by the name of the Cheetah.</p>
+      </div>
+    </section>
 
-    <div class="container mx-auto pt-8">
+    <section class="container mx-auto pt-8 pb-12">
       <p class="text-base text-[#FF0000] font-semibold mb-6">REVIEWS</p>
       <div class="flex">
         <div class="bg-[#F9F9F9] rounded-lg shadow p-6 mr-[30px]">
@@ -127,15 +129,18 @@ export default {
         </div>
         <br />
       </div>
-    </div>
-    <div class="mt-12">
-      <p class="text-sm text-white font-semibold mb-9">RECOMMENDATION MOVIES</p>
-      <div class="card-wrapper">
-        <MovieCard v-for="recommendation in recommendation" :rating="recommendation.rating"
-          :poster="`../src/assets/images/${recommendation.poster}`" :title="recommendation.title"
-          :year="recommendation.year" />
+    </section>
+
+    <section class="bg-[#1E232B]">
+      <div class="container mx-auto py-12">
+        <p class="text-sm text-white font-semibold mb-9">RECOMMENDATION MOVIES</p>
+        <div class="card-wrapper">
+          <MovieCard v-for="recommendation in recommendation" :rating="recommendation.rating"
+            :poster="`../src/assets/images/${recommendation.poster}`" :title="recommendation.title"
+            :year="recommendation.year" />
+        </div>
       </div>
-    </div>
+    </section>
   </main>
 </template>
 
@@ -152,6 +157,6 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   height: 500px;
-  /* margin-top: -58px; */
+  /* margin-top: -60px; */
 }
 </style>
