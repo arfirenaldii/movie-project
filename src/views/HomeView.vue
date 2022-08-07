@@ -16,24 +16,42 @@ export default {
 
 <template>
   <main>
-    <div class="flex justify-between mb-8">
-      <p class="text-2xl text-[#E5E5E5]">Discover Movies</p>
-      <div>
-        <button class="bg-[#FF0000] text-[#E5E5E5] font-semibold py-1 px-4 rounded-full mr-5">Popularity</button>
-        <button class="bg-[#21252A] text-[#E5E5E5] font-semibold py-1 px-4 rounded-full">Release Date</button>
+    <section class="bg-[#292E35]">
+      <div class="container mx-auto h-[333px]">
+        <div class="flex justify-between items-center pt-[90px]">
+          <div>
+            <div class="line"></div>
+            <p class="text-2xl text-[#E5E5E5]">Discover Movies</p>
+          </div>
+          <div>
+            <button class="bg-[#FF0000] text-[#E5E5E5] font-semibold py-1 px-4 rounded-full mr-5">Popularity</button>
+            <button class="bg-[#21252A] text-[#E5E5E5] font-semibold py-1 px-4 rounded-full">Release Date</button>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="card-wrapper">
-      <MovieCard v-for="movie in movies" :rating="movie.rating" :poster="`../src/assets/images/${movie.poster}`"
-        :title="movie.title" :year="movie.year" />
-    </div>
+    </section>
+
+    <section class="bg-[#1E232A] pt-1">
+      <div class="container mx-auto pb-[100px]">
+        <div class="card-wrapper">
+          <MovieCard v-for="movie in movies" :rating="movie.rating" :poster="`../src/assets/images/${movie.poster}`"
+            :title="movie.title" :year="movie.year" />
+        </div>
+      </div>
+    </section>
   </main>
 </template>
 
 <style scoped>
+.line {
+  border-top: 6px solid #E74C3C;
+  width: 112px;
+}
+
 .card-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
+  margin-top: -170px;
 }
 </style>
