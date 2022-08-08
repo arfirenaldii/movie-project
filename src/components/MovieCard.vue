@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-  <div class="flex flex-col relative" @click="this.$router.push(`/movie/wonder-woman`)">
+  <div class="flex flex-col relative md:cursor-pointer" @click="this.$router.push(`/movie/wonder-woman`)">
     <div class="absolute top-0 right-0 z-10 bg-[#1E232B]/80">
       <p class="text-lg text-[#E5E5E5] font-semibold px-3 py-1">{{ rating }}</p>
     </div>
