@@ -16,14 +16,17 @@ export default {
 
 <template>
   <main>
+    <section class="bg-[#1E232A]">
+      <div class="container mx-auto h-[500px]"></div>
+    </section>
     <section class="bg-[#292E35]">
       <div class="container mx-auto h-[333px]">
-        <div class="flex justify-between items-center pt-[90px]">
+        <div class="flex flex-wrap justify-between items-center pt-[90px]">
           <div>
             <div class="line"></div>
             <p class="text-2xl text-[#E5E5E5] font-semibold mt-2">Discover Movies</p>
           </div>
-          <div>
+          <div class="mt-4">
             <button class="bg-[#FF0000] text-[#E5E5E5] font-semibold py-1 px-4 rounded-full mr-5">Popularity</button>
             <button class="bg-[#21252A] text-[#E5E5E5] font-semibold py-1 px-4 rounded-full">Release Date</button>
           </div>
@@ -53,5 +56,12 @@ export default {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
   margin-top: -170px;
+
+}
+
+@media only screen and (max-width: 990px) {
+  .card-wrapper {
+    margin-top: -130px;
+  }
 }
 </style>
