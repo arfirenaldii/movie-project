@@ -62,8 +62,8 @@ export default {
 
     <section class="bg-[#1E232A] pt-1">
       <div class="container mx-auto pb-[100px]">
-        <div class="-mt-[142px] flex gap-7">
-          <aside class="bg-gradient-to-b from-[#0E1723] to-[#1E232A00] rounded-lg text-white min-w-[240px] h-fit">
+        <div class="-mt-[142px] flex gap-7 flex-wrap md:flex-nowrap">
+          <aside class="bg-gradient-to-b from-[#0E1723] to-[#1E232A00] rounded-lg text-white min-w-[240px] h-fit w-full md:w-[200px]">
             <div class="divide-y divide-solid divide-[#FFFFFF]/10">
               <div class="p-4">
                 <p class="text-base font-semibold">Sort Result By</p>
@@ -71,7 +71,7 @@ export default {
               <div class="px-4 pt-5 pb-6">
                 <div class="relative">
                   <button
-                    class="text-white bg-[#E0E0E0]/10 font-normal rounded-md text-sm px-4 py-2 flex justify-between items-center w-full"
+                    class="text-white bg-[#E0E0E0]/10 font-normal rounded-md text-sm px-4 py-2 flex justify-between items-center w-full text-left"
                     type="button" @click="handleToggleDropdown">
                     <span>{{ selected }}</span>
                     <PolygonIcon v-if="showDropdown" class="rotate-180" />

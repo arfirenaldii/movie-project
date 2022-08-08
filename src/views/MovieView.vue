@@ -73,7 +73,7 @@ export default {
 
     <section class="container mx-auto pt-8 pb-12">
       <p class="text-base text-[#FF0000] font-semibold mb-6">REVIEWS</p>
-      <div class="flex">
+      <div class="flex overflow-auto">
         <div class="bg-[#F9F9F9] rounded-lg shadow p-6 mr-[30px]">
           <div class="flex justify-between mb-6">
             <div class="flex items-center">
