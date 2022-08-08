@@ -1,12 +1,14 @@
 <script>
 import MovieCard from '../components/MovieCard.vue';
 import MOVIES from '../data/movies.json'
+import Polygon from '../assets/images/polygon-icon.svg'
+import PolygonIcon from '../components/icons/IconPolygon.vue'
 
 export default {
   data() {
     return {
       movies: MOVIES,
-      selected: '',
+      selected: 'Popularity',
       options: [
         'Popularity Ascending',
         'Popularity Descending',
@@ -28,11 +30,23 @@ export default {
         'History',
         'Horror'
       ],
-      checkedGenres: []
+      checkedGenres: [],
+      showDropdown: false,
     }
   },
   components: {
-    MovieCard
+    MovieCard,
+    Polygon,
+    PolygonIcon,
+  },
+  methods: {
+    handleToggleDropdown() {
+      this.showDropdown = !this.showDropdown
+    },
+    handlePickSort(selected) {
+      this.selected = selected
+      this.handleToggleDropdown()
+    },
   }
 }
 </script>
@@ -48,19 +62,32 @@ export default {
 
     <section class="bg-[#1E232A] pt-1">
       <div class="container mx-auto pb-[100px]">
-        <div class="-mt-[170px] flex gap-7">
+        <div class="-mt-[142px] flex gap-7">
           <aside class="bg-gradient-to-b from-[#0E1723] to-[#1E232A00] rounded-lg text-white min-w-[240px] h-fit">
             <div class="divide-y divide-solid divide-[#FFFFFF]/10">
               <div class="p-4">
                 <p class="text-base font-semibold">Sort Result By</p>
               </div>
               <div class="px-4 pt-5 pb-6">
-                <select class="bg-[#E0E0E0]/10 w-full" v-model="selected">
-                  <option disabled value="">Popularity</option>
-                  <option class="bg-[#111419]" v-for="(sort, index) in options" :key="`${sort}-${index}`" :value="sort">
-                    {{ sort }}
-                  </option>
-                </select>
+                <div class="relative">
+                  <button
+                    class="text-white bg-[#E0E0E0]/10 font-normal rounded-md text-sm px-4 py-2 flex justify-between items-center w-full"
+                    type="button" @click="handleToggleDropdown">
+                    <span>{{ selected }}</span>
+                    <PolygonIcon v-if="showDropdown" class="rotate-180" />
+                    <PolygonIcon v-else />
+                  </button>
+                  <div class="z-10 w-full bg-[#111419] rounded-md divide-y divide-gray-100 shadow absolute"
+                    v-if="showDropdown">
+                    <ul class="py-1 text-sm">
+                      <li
+                        class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white cursor-pointer"
+                        v-for="(sort, index) in options" :key="`${sort}-${index}`" @click="handlePickSort(sort)">
+                        {{ sort }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
               <div class="px-4 py-3">
                 <p class="text-base font-semibold">Genres</p>
