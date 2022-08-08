@@ -27,8 +27,8 @@ export default {
   },
   methods: {
     toggleCategories(hidden) {
-      if (hidden) {
-        this.hiddenCategory = !this.hiddenCategory
+      if (typeof hidden == 'boolean') {
+        this.hiddenCategory = hidden
       } else {
         this.hiddenCategory = !this.hiddenCategory
       }
@@ -119,10 +119,10 @@ export default {
                     </div>
                   </div>
                 </div>
-                <RouterLink @click="toggleCategories(false)" to="/"
+                <RouterLink @click="toggleCategories(true)" to="/"
                   class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">HOME
                 </RouterLink>
-                <RouterLink @click="toggleCategories(false)" to="/movies"
+                <RouterLink @click="toggleCategories(true)" to="/movies"
                   class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                   MOVIES
                 </RouterLink>
