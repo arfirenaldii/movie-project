@@ -16,9 +16,6 @@ export default {
 
 <template>
   <main>
-    <section class="bg-[#1E232A]">
-      <div class="container mx-auto h-[500px]"></div>
-    </section>
     <section class="bg-[#292E35]">
       <div class="container mx-auto h-[333px]">
         <div class="flex flex-wrap justify-between items-center pt-[90px]">
