@@ -95,7 +95,8 @@ export default {
               <div class="px-4 py-3">
                 <div class="flex justify-between py-1" v-for="(genre, index) in genres" :key="`${genre}-${index}`">
                   <label class="text-sm font-normal" :for="genre">{{ genre }}</label>
-                  <input type="checkbox" :value="genre" v-model="checkedGenres">
+                  <input type="checkbox" :value="genre" v-model="checkedGenres"
+                    class="w-4 h-4 text-[#E74C3C] rounded bg-gray-700 border-gray-500 focus:ring-transparent checked:border-white">
                 </div>
               </div>
             </div>

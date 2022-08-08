@@ -4,10 +4,12 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <header>
-    <nav>
-      <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/movies">Movies</RouterLink>
-    </nav>
+    <div class="container mx-auto">
+      <nav>
+        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/movies">Movies</RouterLink>
+      </nav>
+    </div>
   </header>
 
   <RouterView />
@@ -18,7 +20,7 @@ nav {
   width: 100%;
   font-size: 12px;
   text-align: center;
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
 }
 
 nav a.router-link-exact-active {
@@ -58,11 +60,11 @@ nav a:first-of-type {
 
   nav {
     text-align: left;
-    margin-left: -1rem;
+    /* margin-left: -1rem; */
     font-size: 1rem;
 
     padding: 1rem 0;
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
   }
 }
 </style>
