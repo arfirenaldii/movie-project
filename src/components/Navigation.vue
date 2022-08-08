@@ -1,16 +1,26 @@
-<script setup>
+<script>
 import { RouterLink } from 'vue-router'
+
+export default {
+  data() {
+    return {
+      hiddenCategory: true,
+      search: '',
+    }
+  },
+  components: {
+    RouterLink
+  },
+  methods: {
+    toggleCategories() {
+      this.hiddenCategory = !this.hiddenCategory
+    }
+  }
+}
 </script>
 
 <template>
   <header>
-    <!-- <div class="container mx-auto">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/movies">Movies</RouterLink>
-      </nav>
-    </div> -->
-
     <nav class="bg-[#292E35]">
       <div class="max-w-7xl mx-auto px-2 md:px-6 lg:px-8">
         <div class="relative flex items-center justify-between h-16">
@@ -46,13 +56,13 @@ import { RouterLink } from 'vue-router'
             </button>
           </div>
 
-          <!-- <div class="flex-1 flex items-center justify-center md:items-stretch md:justify-start"> -->
           <div class="flex items-center justify-center md:items-stretch md:justify-between w-full">
-            <!-- logo -->
-            <div class="flex-shrink-0 flex items-center">
-              <img class="block lg:hidden h-8 w-auto" src="../assets/moovietime-logo.svg" alt="Moovie Time">
-              <img class="hidden lg:block h-8 w-auto" src="../assets/moovietime-logo.svg" alt="Moovie Time">
-            </div>
+            <RouterLink to="/">
+              <div class="flex-shrink-0 flex items-center">
+                <img class="block lg:hidden h-8 w-auto" src="../assets/moovietime-logo.svg" alt="Moovie Time">
+                <img class="hidden lg:block h-8 w-auto" src="../assets/moovietime-logo.svg" alt="Moovie Time">
+              </div>
+            </RouterLink>
             <div class="hidden md:block md:ml-6 flex-1">
               <div class="flex space-x-4 w-full">
                 <!-- INPUT SEARCH -->
@@ -60,7 +70,7 @@ import { RouterLink } from 'vue-router'
                   <div class="flex absolute inset-y-0 left-0 items-center pl-2 pointer-events-none">
                     <img src="../assets/images/movie-icon.svg" alt="movie search icon">
                   </div>
-                  <input type="text" id="search-navbar"
+                  <input type="text" v-model="search"
                     class="block p-2 px-10 w-full rounded md:text-sm bg-[#000000]/20 border-[#000000]/20 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
                     placeholder="Find movie">
                   <div class="flex absolute inset-y-0 right-0 items-center pr-3 pointer-events-none">
@@ -70,15 +80,15 @@ import { RouterLink } from 'vue-router'
                 <!-- CATEGORIES -->
                 <div class="absolute inset-y-0 right-0 flex items-center pr-2 md:static md:inset-auto md:ml-6 md:pr-0">
                   <div class="ml-3 relative">
-                    <div>
+                    <div @click="toggleCategories">
                       <a href="#"
                         class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex justify-center gap-3">
                         <img src="../assets/images/categories-icon.svg" alt="categories icon" />
                         <div>CATEGORIES</div>
                       </a>
                     </div>
-                    <div
-                      class="hidden absolute top-[45px] left-[12px] mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                    <div :class="{ hidden: hiddenCategory }"
+                      class="absolute z-10 top-[45px] left-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
                       role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                       <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
                         id="user-menu-item-0">Your Profile</a>
