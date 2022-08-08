@@ -5,6 +5,20 @@ export default {
   data() {
     return {
       hiddenCategory: true,
+      hiddenMenu: true,
+      categories: [
+        'ACTION',
+        'ADVENTURE',
+        'ANIMATION',
+        'COMEDY',
+        'CRIME',
+        'DOCUMENTARY',
+        'DRAMA',
+        'FAMILY',
+        'FANTASY',
+        'HISTORY',
+        'HORROR',
+      ],
       search: '',
     }
   },
@@ -12,9 +26,16 @@ export default {
     RouterLink
   },
   methods: {
-    toggleCategories() {
-      this.hiddenCategory = !this.hiddenCategory
-    }
+    toggleCategories(hidden) {
+      if (hidden) {
+        this.hiddenCategory = !this.hiddenCategory
+      } else {
+        this.hiddenCategory = !this.hiddenCategory
+      }
+    },
+    toggleMenu() {
+      this.hiddenMenu = !this.hiddenMenu
+    },
   }
 }
 </script>
@@ -27,7 +48,7 @@ export default {
 
           <div class="absolute inset-y-0 left-0 flex items-center md:hidden">
             <!-- Mobile menu button-->
-            <button type="button"
+            <button @click="toggleMenu" type="button"
               class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
               aria-controls="mobile-menu" aria-expanded="false">
               <span class="sr-only">Open main menu</span>
@@ -88,22 +109,20 @@ export default {
                       </a>
                     </div>
                     <div :class="{ hidden: hiddenCategory }"
-                      class="absolute z-10 top-[45px] left-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                      class="absolute z-20 top-[45px] left-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
                       role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-                      <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
-                        id="user-menu-item-0">Your Profile</a>
-                      <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
-                        id="user-menu-item-1">Settings</a>
-                      <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
-                        id="user-menu-item-2">Sign out</a>
+                      <a v-for="(category, index) in categories" :key="index" href="#"
+                        class="block px-4 py-2 text-sm text-[#1E232B] font-semibold hover:bg-gray-200" role="menuitem"
+                        tabindex="-1">
+                        {{ category }}
+                      </a>
                     </div>
                   </div>
                 </div>
-
-                <RouterLink to="/"
+                <RouterLink @click="toggleCategories(false)" to="/"
                   class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">HOME
                 </RouterLink>
-                <RouterLink to="/movies"
+                <RouterLink @click="toggleCategories(false)" to="/movies"
                   class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                   MOVIES
                 </RouterLink>
@@ -119,7 +138,7 @@ export default {
       </div>
 
       <!-- Mobile menu, show/hide based on menu state. -->
-      <div class="hidden md:hidden" id="mobile-menu">
+      <div :class="{ hidden: hiddenMenu }" class="md:hidden" id="mobile-menu">
         <div class="px-2 pt-2 pb-3 space-y-1">
           <RouterLink to="/"
             class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
@@ -140,57 +159,3 @@ export default {
     </nav>
   </header>
 </template>
-
-<!-- <style scoped>
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  /* margin-top: 2rem; */
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    /* margin-left: -1rem; */
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    /* margin-top: 1rem; */
-  }
-}
-</style> -->
