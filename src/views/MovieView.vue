@@ -24,13 +24,13 @@ export default {
     <section class="relative bg-black">
       <div class="banner"></div>
       <div class="absolute bottom-0 w-full">
-        <div class="container mx-auto pb-7 pl-[250px]">
+        <div class="container mx-auto pb-7 pl-[290px]">
           <p class="text-lg text-white font-medium">2020</p>
           <p class="text-4xl text-white font-semibold">Wonder Woman 1984</p>
           <p class="text-sm text-white font-medium">Fantasy, Action, Adventure</p>
         </div>
         <div class="bg-black/50 py-4">
-          <div class="container mx-auto flex pl-[250px]">
+          <div class="container mx-auto flex pl-[290px]">
             <div class="flex items-center pr-8 border-r-[1px] border-white/20">
               <img class="mr-4" src="../assets/images/star-icon.svg" alt="star icon" />
               <p class="text-4xl text-white font-semibold mr-3">7.0</p>
