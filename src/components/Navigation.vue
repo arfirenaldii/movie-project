@@ -46,16 +46,17 @@ import { RouterLink } from 'vue-router'
             </button>
           </div>
 
-          <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+          <!-- <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start"> -->
+          <div class="flex items-center justify-center sm:items-stretch sm:justify-between w-full">
             <!-- logo -->
             <div class="flex-shrink-0 flex items-center">
               <img class="block lg:hidden h-8 w-auto" src="../assets/moovietime-logo.svg" alt="Moovie Time">
               <img class="hidden lg:block h-8 w-auto" src="../assets/moovietime-logo.svg" alt="Moovie Time">
             </div>
-            <div class="hidden sm:block sm:ml-6">
-              <div class="flex space-x-4">
+            <div class="hidden sm:block sm:ml-6 flex-1">
+              <div class="flex space-x-4 w-full">
                 <!-- INPUT SEARCH -->
-                <div class="hidden relative sm:block">
+                <div class="hidden relative sm:block flex-1">
                   <div class="flex absolute inset-y-0 left-0 items-center pl-2 pointer-events-none">
                     <img src="../assets/images/movie-icon.svg" alt="movie search icon">
                   </div>
