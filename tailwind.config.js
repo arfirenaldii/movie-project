@@ -6,10 +6,13 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    screens: {
+      md: '990px'
+    },
     container: {
       padding: '2rem',
       screens: {
-        lg: '1280px'
+        lg: '1280px',
       },
     },
   },
